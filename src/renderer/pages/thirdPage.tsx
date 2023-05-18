@@ -1,9 +1,11 @@
 import React from 'react'
+import { HomeBtn } from '../components';
 
 export default function ThirdPage() {
   return (
     <section className='thirdPage'>
-        <div className='background'></div>
+        <HomeBtn />
+        <div className='background' />
     </section>
   )
 }
