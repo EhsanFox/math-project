@@ -77,17 +77,48 @@ header{
 }
 
 main{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    
     header{
-        height: 20px;
+        height: fit-content;
         display: flex;
+        flex-direction: row;
         gap: 10px;
+        padding: 0 10px; 
         position: absolute;
+    }
+
+    & .homeBtnParent{
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        left: 35px;
+        top: 75px;
+        z-index: 1000;
+
+        & .homeBtn{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background: transparent;
+            background-image: url('../img/home.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1000;
+        }
     }
 
     & .firsPage{
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-image: url('../img/blackboard.jpg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
 
         & .objectBoxParent{
             width: 100%;
@@ -119,25 +150,21 @@ main{
             justify-content: center;
             gap: 10px;
 
-            & .btnOne{
-                
-            }
+
             & .btnTwo{
                 align-self: flex-end;
             }
-            & .btnThree{
-                
-            }
+
             & .btnFour{
                 align-self: flex-end;
             }
 
             button {
-                width: calc(50% - 60px);
+                width: calc(50% - 140px);
                 font-size: 17px;
                 border: none;
                 border-radius: 0.75em;
-                background: #000000;
+                background-color: transparent;
                 height: 70px;
             }
               
@@ -145,9 +172,11 @@ main{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 2px solid #000000;
                 border-radius: 0.75em;
-                background: #e8e8e8;
+                background-image: url('../img/cover.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 color: #000000;
                 transform: translateY(-0.2em);
                 transition: transform 0.1s ease;
@@ -234,11 +263,32 @@ main{
             justify-content: space-between;
             align-items: center;
             padding: 0px 20px;
-            height: 70px;
+            height: 80px;
             & button{
                 border: none;
                 outline: none;
                 border-radius: 16px;
+                margin-bottom: 20px;
+            }
+
+            & .nextBtn{
+                height: 60px;
+                width: 60px;
+                background: transparent;
+                background-image: url('../img/next.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            & .prevBtn{
+                height: 60px;
+                width: 60px;
+                background: transparent;
+                background-image: url('../img/back.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
     }
@@ -252,6 +302,164 @@ main{
             background-size: cover;
             height: 575px;
             width: 800px;
+        }
+    }
+
+    & .startCourse{
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+
+        & .objectBoxParent{
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            & .objectBox{
+                background: #e8e8e8;
+                height: 80px;
+                width: 300px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3em;
+                border: solid #000000 2px;
+            }
+        }
+
+        & .btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        & .buttons{
+            height: 230px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        & button{
+            background: #e8e8e8;
+            height: 60px;
+            width: 200px;
+            border-radius: 15px;
+            font-size: 1.3em;
+            border: solid #000000 2px;
+        }
+
+    }
+
+    & .exam{
+        padding: 0 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        height: 100vh;
+
+        & .rightContent{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+            height: 100vh;
+
+            & .objectBoxParent{
+                width: 100%;
+                height: 180px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                & .objectBox{
+                    background: #e8e8e8;
+                    height: 80px;
+                    width: 400px;
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.3em;
+                    border: solid #000000 2px;
+                }
+            }
+
+            & .buttons{
+                height: 170px;
+                width: 490px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            & button{
+                background: #e8e8e8;
+                height: 60px;
+                width: 150px;
+                border-radius: 15px;
+                font-size: 1.3em;
+                border: solid #000000 2px;
+            }
+
+            & .doneBtn{
+                width: 60px;
+                border: none;
+                background: transparent;
+                position: absolute;
+                bottom: 70px;
+                right: 40px;
+                background-image: url('../img/right.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+        }
+
+        & .leftContent{
+            width: 400px;
+            height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .img{
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+                background: red;
+            }
+
+            & .objectBoxParent{
+                width: 100%;
+                height: 180px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                & .objectBox{
+                    background: #e8e8e8;
+                    height: 80px;
+                    width: 400px;
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.3em;
+                    border: solid #000000 2px;
+                }
+            }
         }
     }
 }
