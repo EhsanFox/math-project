@@ -13,6 +13,19 @@ module.exports = {
     buildResources: 'assets',
     output: 'build',
   },
+  publish: [
+    {
+      provider: 'generic',
+      url: 'https://wintube-server.vercel.app/files',
+    },
+    {
+      provider: 'github',
+      private: true,
+      owner: 'EhsanFox',
+      repo: 'math-project',
+      releaseType: 'release',
+    },
+  ],
   // Platforms
 
   // Windows

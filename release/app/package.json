@@ -8,9 +8,9 @@
     "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
     "postinstall": "npm run rebuild && npm run link-modules",
     "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts",
-    "build:win": "electron-builder build --win --config=build.config.js",
-    "build:mac": "electron-builder build --mac --config=build.config.js",
-    "build:linux": "electron-builder build --linux --config=build.config.js",
+    "build:win": "electron-builder build --win --publish=always --config=build.config.js",
+    "build:mac": "electron-builder build --mac --publish=always --config=build.config.js",
+    "build:linux": "electron-builder build --linux --publish=always --config=build.config.js",
     "build:all": "electron-builder build --linux --mac --win --config=build.config.js"
   },
   "repository": {
