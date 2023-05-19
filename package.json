@@ -23,6 +23,10 @@
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest"
   },
+  "repository": {
+    "url": "https://github.com/EhsanFox/math-project",
+    "type": "github"
+  },
   "browserslist": [],
   "prettier": {
     "singleQuote": true,
