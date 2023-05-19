@@ -10,7 +10,8 @@ export default function Titlebar() {
 
   return (
     <header className="pageHeader">
-      <p>{window.info.name}</p>
+      <p />
+
       <div className="drag-region" />
       <div className="HeaderBtns">
         <button

@@ -2,7 +2,7 @@ import React from 'react';
 import Variant from '../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HomeBtn } from 'renderer/components';
+import { HomeButton } from '../components';
 
 export default function StartCourse() {
   const { ref, inView } = useInView({
@@ -12,7 +12,7 @@ export default function StartCourse() {
 
     return (
         <section className='startCourse'>
-            <HomeBtn />
+            <HomeButton />
 
             <div className="objectBoxParent">
                 <motion.div

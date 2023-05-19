@@ -2,7 +2,7 @@ import React from 'react';
 import Variant from '../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { NarrowButtons, HomeBtn } from 'renderer/components';
+import { HomeButton } from '../components';
 
 export default function SecondPage() {
   const { ref, inView } = useInView({
@@ -13,8 +13,8 @@ export default function SecondPage() {
 
   return (
     <section className="secondPage">
-      <HomeBtn />
-      
+      <HomeButton />
+
       <div className="objectBoxParent">
         <motion.div
           className="objectBox"
@@ -66,8 +66,6 @@ export default function SecondPage() {
           </p>
         </motion.div>
       </div>
-
-      <NarrowButtons nextLink="" prevLink="" />
     </section>
   );
 }

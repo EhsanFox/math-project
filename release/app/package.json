@@ -4,11 +4,23 @@
   "description": "",
   "main": "./dist/main/main.js",
   "scripts": {
+    "start": "electron dist/main/main.js",
     "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
     "postinstall": "npm run rebuild && npm run link-modules",
-    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts",
+    "build:win": "electron-builder build --win --config=build.config.js",
+    "build:mac": "electron-builder build --mac --config=build.config.js",
+    "build:linux": "electron-builder build --linux --config=build.config.js",
+    "build:all": "electron-builder build --linux --mac --win --config=build.config.js"
   },
   "dependencies": {
-    "electron-store": "^8.1.0"
+    "electron-debug": "^3.2.0",
+    "electron-log": "^4.4.8",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^5.3.0"
+  },
+  "devDependencies": {
+    "electron": "^23.1.0",
+    "electron-builder": "^23.6.0"
   }
 }

@@ -51,7 +51,7 @@ export default class AppWindow {
       : path.join(__dirname, '../../assets');
 
     this.PRELOAD_PATH = this.app.isPackaged
-      ? path.join(__dirname, 'preloads', 'main.preload.js')
+      ? path.join(__dirname, 'preload.js')
       : path.join(__dirname, '../../.erb/dll/preload.js');
   }
 
@@ -76,7 +76,9 @@ export default class AppWindow {
       )
     );
 
-    this.mainWindow.loadURL(this.utils.resolveHtmlPath('index.html'));
+    const filePath = this.utils.resolveHtmlPath('index.html');
+    this.mainWindow.loadURL(filePath);
+    console.log(`loading file: ${filePath}`);
 
     // Open urls in the user's browser
     this.mainWindow.webContents.setWindowOpenHandler((edata) => {
@@ -99,11 +101,13 @@ export default class AppWindow {
         10000
       );
     } else {
+      /*
       this.updater = new AppUpdater(
         this.mainWindow as BrowserWindow,
         this.elog,
         this.utils.getConfig('updater')
       );
+      */
     }
   }
 
