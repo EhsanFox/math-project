@@ -7,6 +7,8 @@ export enum IPCEvents {
   appUpdateAvailable = 'update-available',
   appUpdateNotAvailable = 'update-not-available',
 
+  updateStorage = "update-storage",
+
   api = 'api',
   log = 'log',
 

@@ -4,7 +4,7 @@ import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HomeButton } from '../components';
 
-export default function SecondPage() {
+export default function CourseTemplate() {
   const { ref, inView } = useInView({
     threshold: 0,
     root: null,

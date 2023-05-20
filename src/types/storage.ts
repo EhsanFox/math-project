@@ -1,5 +1,5 @@
-import { Engines } from './api';
 
+export type courseState = "start" | "lock" | "finish";
 export interface IStoreData extends Record<string, unknown> {
   windows: {
     x: number;
@@ -8,17 +8,19 @@ export interface IStoreData extends Record<string, unknown> {
     width: number;
     isMaximized: boolean;
   };
-}
 
-export interface ITrackData {
-  id: string;
-  title: string;
-  author: string;
-  image: string;
-}
+  lessons: {
+    1: courseState;
+    2: courseState;
+    3: courseState;
+    4: courseState;
+  };
 
-export interface IStoreMusic extends Record<string, unknown> {
-  youtube: ITrackData[];
-  spotify: ITrackData[];
-  soundcloud: ITrackData[];
+  exams: {
+    1: courseState;
+    2: courseState;
+    3: courseState;
+    4: courseState;
+  }
+
 }

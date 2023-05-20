@@ -31,6 +31,40 @@ export default class Storage<T extends Record<string, unknown> = IStoreData> {
           },
         },
       },
+      lessons: {
+        type: 'object',
+        properties: {
+          1: {
+            type: 'string'
+          },
+          2: {
+            type: 'string'
+          },
+          3: {
+            type: 'string'
+          },
+          4: {
+            type: 'string'
+          },
+        },
+      },
+      exams: {
+        type: 'object',
+        properties: {
+          1: {
+            type: 'string'
+          },
+          2: {
+            type: 'string'
+          },
+          3: {
+            type: 'string'
+          },
+          4: {
+            type: 'string'
+          },
+        }
+      }
     } as unknown as T,
     private readonly opts: Options<T> = {
       accessPropertiesByDotNotation: true,

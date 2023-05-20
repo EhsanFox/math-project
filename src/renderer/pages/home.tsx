@@ -3,7 +3,7 @@ import Variant from '../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export default function FirstPage() {
+export default function homePage() {
   const { ref, inView } = useInView({
     threshold: 0,
     root: null,
