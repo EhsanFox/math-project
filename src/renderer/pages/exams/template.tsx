@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent } from 'react';
-import Variant from '../components/variant';
+import Variant from '../../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HomeButton } from '../components';
+import { HomeButton } from '../../components';
 
 export default function ExamTemplate() {
   const [value, setValue] = useState<string>('option1');

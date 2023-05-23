@@ -17,6 +17,7 @@ module.exports = {
     'no-shadow': 'off',
     'lines-between-class-members': 'off',
     'default-case': 'off',
+    'react-hooks/rules-of-hooks': 'off',
     'prettier/prettier': [
       'off',
       {
