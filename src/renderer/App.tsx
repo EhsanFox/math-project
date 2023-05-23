@@ -13,14 +13,9 @@ import {
 function App() {
   return (
     <HashRouter>
-      <header>
-        <TitleBar />
-        <Link to="/">Home</Link>
-        <Link to="/courses">Courses</Link>
-        <Link to="/exams">StartCourse</Link>
-        <Link to="/exam-template">Exam</Link>
-        <Link to="/course-template">Course</Link>
-      </header>
+        <header>
+          <TitleBar />
+        </header>
 
       <main>
         <Routes>

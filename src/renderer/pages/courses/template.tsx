@@ -65,7 +65,13 @@ export default function CourseTemplate() {
             استفاده قرار گیرد.
           </p>
         </motion.div>
+
+          <div className='btns'>
+            <button  className='prevBtn'></button>
+            <button  className='nextBtn'></button>
+          </div>
       </div>
+
     </section>
   );
 }

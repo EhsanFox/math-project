@@ -8,7 +8,7 @@ export default (
   return {
     show: false,
     width: 800,
-    height: 600,
+    height: 566,
     icon: iconPath,
     frame: false,
     transparent: true,

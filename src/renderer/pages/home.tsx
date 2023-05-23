@@ -2,6 +2,7 @@ import React from 'react';
 import Variant from '../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 export default function homePage() {
   const { ref, inView } = useInView({
@@ -38,7 +39,7 @@ export default function homePage() {
             Variant('fadeLeft', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <span className="button_top">لیست درس ها</span>
+          <Link to="/courses" className="button_top"><span> لیست درس ها </span></Link>
         </motion.button>
 
         <motion.button
@@ -51,7 +52,7 @@ export default function homePage() {
             Variant('fadeRight', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <span className="button_top">امتحانات</span>
+          <Link to="/exams" className="button_top"><span>امتحانات</span></Link>
         </motion.button>
 
         <motion.button
@@ -64,7 +65,7 @@ export default function homePage() {
             Variant('fadeLeft', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <span className="button_top">نمرات</span>
+          <Link to="/course-template" className="button_top"><span>نمرات</span></Link>
         </motion.button>
 
         <motion.button
@@ -77,7 +78,7 @@ export default function homePage() {
             Variant('fadeRight', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <span className="button_top">درباره نرم افزار</span>
+          <Link to="/exam-template" className="button_top"><span>درباره نرم افزار</span></Link>
         </motion.button>
       </div>
     </section>

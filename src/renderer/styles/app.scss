@@ -8,15 +8,14 @@
 }
 
 body{
-    background-color: hsl(0, 0%, 20%);
     color: black;
+    background: white;
 }
 
 header{
     height: 25px;
     width: 100%;
-    background-color: hsl(0, 0%, 15%);
-    
+
     & .drag-region{
         width: 100%;
         height: 100%;
@@ -76,32 +75,56 @@ header{
     }
 }
 
+button{
+    color: white !important;
+}
+span{
+    color: white;
+}
+
+p{
+    padding: 0;
+    margin: 0;
+}
+
 main{
     width: 100%;
     position: relative;
     height: 100vh;
-    
-    header{
-        height: fit-content;
+    margin-top: 10px;
+
+    & .blurBak{
+        width: 100vw;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        padding: 0 10px; 
-        position: absolute;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 0 20px;
     }
 
+    .blurBackground{
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        padding: 0 20px;
+    }
+
+
     & .homeBtnParent{
-        height: 50px;
-        width: 50px;
+        height: 120px;
+        width: 120px;
         position: absolute;
-        left: 35px;
-        top: 75px;
+        left: 20px;
+        top: 20px;
         z-index: 1000;
 
         & .homeBtn{
             position: absolute;
-            height: 50px;
-            width: 50px;
+            height: 70px;
+            width: 70px;
             background: transparent;
             background-image: url('../img/home.png');
             background-position: center;
@@ -114,11 +137,10 @@ main{
     & .firsPage{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        background-image: url('../img/blackboard.jpg');
-        background-position: center;
+        background-image: url('../img/home.jpg');
         background-size: contain;
         background-repeat: no-repeat;
+        margin-top: 5px;
 
         & .objectBoxParent{
             width: 100%;
@@ -181,6 +203,7 @@ main{
                 transform: translateY(-0.2em);
                 transition: transform 0.1s ease;
                 height: 70px;
+                text-decoration: none;
               }
               
               button:active .button_top {
@@ -191,76 +214,11 @@ main{
     }
 
     & .secondPage{
-        margin-top: 30px;
-        background-image: url('../img/blackboard.jpg');
-        background-position: center;
-        background-size: contain;
+        background-image: url('../img/home.jpg');
+        background-size: cover;
+        width: 100%;
+        height: calc(100vh - 30px);
         background-repeat: no-repeat;
-
-        & .objectBoxParent{
-            width: 100%;
-            height: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & .objectBox{
-                background: #e8e8e8;
-                height: 100px;
-                width: 300px;
-                border-radius: 15px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.3em;
-                border: solid #000000 2px;
-            }
-        }
-
-        & .main{
-            width: 100%;
-            padding: 30px;
-            height: 330px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            gap: 10px;
-
-            & .textArea{
-                background: #e8e8e8;
-                padding: 10px 15px;
-                border-radius: 16px;
-                width: 350px;
-                height: 250px;
-                
-                p{
-                    direction: rtl;
-                }
-            }
-
-            button {
-                margin: 12px;
-                height: 250px;
-                width: 250px;
-                border-radius: 100%;
-                background: #333;
-                justify-content: center;
-                align-items: center;
-                box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
-                font-family: 'Damion', cursive;
-                border: none;
-                font-size: 2em;
-                color: rgb(161, 161, 161);
-                transition: 500ms;
-              }
-              
-              button:hover {
-                box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
-                color: #d6d6d6;
-                transition: 500ms;
-              }
-        }
 
         & .btns{
             width: 100%;
@@ -269,6 +227,10 @@ main{
             align-items: center;
             padding: 0px 20px;
             height: 80px;
+            position: absolute;
+            bottom: 30px;
+            
+
             & button{
                 border: none;
                 outline: none;
@@ -296,10 +258,73 @@ main{
                 background-size: cover;
             }
         }
+
+        & .objectBoxParent{
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            & .objectBox{
+                background: #e8e8e8;
+                height: 100px;
+                width: 300px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3em;
+                border: solid #000000 2px;
+            }
+        }
+
+        & .main{
+            margin-top: -30px;
+            width: 100%;
+            height: 290px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 10px;
+
+            & .textArea{
+                background: #e8e8e8;
+                padding: 10px 15px;
+                border-radius: 16px;
+                width: 350px;
+                height: 250px;
+                
+                p{
+                    direction: rtl;
+                }
+            }
+
+            .startBtn {
+                margin: 12px;
+                height: 250px;
+                width: 250px;
+                border-radius: 100%;
+                background: #333;
+                justify-content: center;
+                align-items: center;
+                box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+                font-family: 'Damion', cursive;
+                border: none;
+                font-size: 2em;
+                color: rgb(161, 161, 161);
+                transition: 500ms;
+              }
+              
+              .startBtn:hover {
+                box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+                color: #d6d6d6;
+                transition: 500ms;
+              }
+        }
     }
 
     & .thirdPage{
-        margin-top: 30px;
         background-image: url('../img/blackboard.jpg');
         background-position: center;
         background-size: contain;
@@ -318,14 +343,14 @@ main{
     & .startCourse{
         width: 100%;
         height: 100vh;
-        background-image: url('../img/blackboard.jpg');
+        background-image: url('../img/schoolClass.jpg');
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
 
-        padding: 0 40px;
         display: flex;
         flex-direction: column;
+
 
         & .objectBoxParent{
             width: 100%;
@@ -355,7 +380,7 @@ main{
         }
 
         & .buttons{
-            height: 230px;
+            height: 300px;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
@@ -380,12 +405,11 @@ main{
     }
 
     & .exam{
-        background-image: url('../img/blackboard.jpg');
+        background-image: url('../img/schoolClass.jpg');
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         
-        padding: 0 40px;
         display: flex;
         flex-direction: row;
         align-items: flex-end;
@@ -398,6 +422,7 @@ main{
             align-items: flex-end;
             width: 100%;
             height: 100vh;
+            padding: 20px 0;
 
             & .objectBoxParent{
                 width: 100%;
@@ -510,3 +535,46 @@ main{
         }
     }
 }
+
+.backgrundIMG{
+    background-image: url('../img/schoolClass2.jpg') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.MuiPaper-root{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-dialog-title{
+    text-align: center;
+}
+
+.dialogContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000 !important;
+}
+
+.dBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75em;
+    background-image: url('../img/cover.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40px;
+    width: 130px;
+    font-size: 1.2em !important;
+    color: white !important;
+    text-decoration: none;
+}
+

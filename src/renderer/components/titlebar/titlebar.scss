@@ -1,13 +1,19 @@
-$TextColor: #ffffff;
+$TextColor: black;
 
 .pageHeader{
-    padding: 0 0 0 20px;
+    padding: 0 0 0 0px;
     height: 30px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    p{
+        position: absolute;
+        left: 20px;
+        width: 60px
+    };
     
     .drag-region{
         width: 100%;
