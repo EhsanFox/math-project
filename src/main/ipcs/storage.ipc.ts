@@ -1,4 +1,4 @@
-import { MainStorage } from 'main/storages';
+import { MainStorage } from '../storages';
 import { IPCEvents } from '../constants';
 import IPCEvent from './base.ipc';
 
@@ -7,19 +7,15 @@ export default new IPCEvent(
   'async',
   (window, event, action, key: string, value?: string) => {
     const storage = MainStorage;
-    switch (action) {
-      case 'set':
-        if(!value) return false;
 
-        return storage.set(key, value)
-        break;
+    if (action === 'set') {
+      if (!value) return false;
 
-      case 'get':
-        return storage.get<string>(key);
-        break;
-
-      default:
-        break;
+      return storage.set(key, value);
+    } else if (action === 'get') {
+      return storage.get<string>(key);
+    } else {
+      // todo:
     }
   }
 );

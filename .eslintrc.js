@@ -18,6 +18,8 @@ module.exports = {
     'lines-between-class-members': 'off',
     'default-case': 'off',
     'react-hooks/rules-of-hooks': 'off',
+    'consistent-return': 'off',
+    'no-else-return': 'off',
     'prettier/prettier': [
       'off',
       {
