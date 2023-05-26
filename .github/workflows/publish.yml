@@ -20,7 +20,7 @@ jobs:
           node-version: 16
           cache: npm
 
-      - name: Install
+      - name: NPM Install
         run: npm install --force
         
       - name: Publish releases
