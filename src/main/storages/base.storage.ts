@@ -22,12 +22,11 @@ export default class Storage<T extends Record<string, unknown> = IStoreData> {
           },
           height: {
             type: 'number',
+            default: 566,
           },
           width: {
             type: 'number',
-          },
-          isMaximized: {
-            type: 'boolean',
+            default: 800,
           },
         },
       },
@@ -35,16 +34,12 @@ export default class Storage<T extends Record<string, unknown> = IStoreData> {
         type: 'object',
         properties: {
           1: {
-            type: 'string'
+            enum: ['start', 'lock', 'finish'],
+            default: 'start',
           },
           2: {
-            type: 'string'
-          },
-          3: {
-            type: 'string'
-          },
-          4: {
-            type: 'string'
+            enum: ['start', 'lock', 'finish'],
+            default: 'lock',
           },
         },
       },
@@ -52,19 +47,15 @@ export default class Storage<T extends Record<string, unknown> = IStoreData> {
         type: 'object',
         properties: {
           1: {
-            type: 'string'
+            enum: ['start', 'lock', 'finish'],
+            default: 'start',
           },
           2: {
-            type: 'string'
+            enum: ['start', 'lock', 'finish'],
+            default: 'lock',
           },
-          3: {
-            type: 'string'
-          },
-          4: {
-            type: 'string'
-          },
-        }
-      }
+        },
+      },
     } as unknown as T,
     private readonly opts: Options<T> = {
       accessPropertiesByDotNotation: true,
@@ -77,6 +68,21 @@ export default class Storage<T extends Record<string, unknown> = IStoreData> {
     }
   ) {
     this.opts.schema = this.schema as Schema<T>;
+    this.opts.defaults = {
+      window: {
+        height: 566,
+        width: 800,
+      },
+      lessons: {
+        1: 'start',
+        2: 'lock',
+      },
+
+      exams: {
+        1: 'lock',
+        2: 'lock',
+      },
+    } as unknown as Readonly<T>;
     // @ts-ignore
     this.opts.name = this.name;
     if (!this.engine) this.engine = new Store(this.opts);

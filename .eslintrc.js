@@ -20,6 +20,11 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'off',
     'consistent-return': 'off',
     'no-else-return': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
+    'react/require-default-props': 'off',
+    'react-hooks/exhaustive-deps': 'off',
     'prettier/prettier': [
       'off',
       {

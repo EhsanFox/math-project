@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 import Variant from '../../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HomeButton } from '../../components';
-
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogActions from '@material-ui/core/DialogActions';
-import Button from '@material-ui/core/Button';
+import { HomeButton, Popup } from '../../components';
 
 export default function ExamTemplate() {
   const [value, setValue] = useState<string>('option1');
@@ -27,15 +21,9 @@ export default function ExamTemplate() {
     setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
   return (
     <section className="exam">
-
-      <div className='blurBak'>
+      <div className="blurBak">
         <HomeButton />
 
         <div className="leftContent">
@@ -56,23 +44,21 @@ export default function ExamTemplate() {
           </div>
         </div>
 
-
         <div className="rightContent">
-
           <div className="objectBoxParent">
-              <motion.div
-                  className="objectBox"
-                  ref={ref}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true }}
-                  variants={
-                  Variant('fadeDown', 'tween', 0.5, 0.1) as unknown as Variants
-                  }
-              >
-                  <p>سوال</p>
-              </motion.div>
-              </div>
+            <motion.div
+              className="objectBox"
+              ref={ref}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              variants={
+                Variant('fadeDown', 'tween', 0.5, 0.1) as unknown as Variants
+              }
+            >
+              <p>سوال</p>
+            </motion.div>
+          </div>
 
           <div className="buttons">
             <motion.label
@@ -160,7 +146,7 @@ export default function ExamTemplate() {
             </motion.label>
           </div>
 
-          <motion.Button
+          <motion.button
             className="doneBtn"
             ref={ref}
             initial="offscreen"
@@ -173,18 +159,7 @@ export default function ExamTemplate() {
           />
         </div>
 
-        <Dialog className="my-dialog" open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Dialog Title</DialogTitle>
-
-          <DialogContent className='dialogContent'>
-            <p>افرین</p>
-          </DialogContent>
-
-          <DialogActions>
-            <Link className="dBtn" to="/">باشه</Link>
-          </DialogActions>
-
-        </Dialog>
+        <Popup open={open} title="test" body="test" link="/" />
       </div>
     </section>
   );

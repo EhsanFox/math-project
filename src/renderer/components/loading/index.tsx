@@ -14,7 +14,7 @@ export default function Loading({ cancel }: { cancel: () => void }) {
 
   window.ipc.on('update-not-available', () => {
     setState(`Starting...`);
-    cancel();
+    // cancel();
   });
 
   window.ipc.on('update-available', (e, info: UpdateInfo) => {

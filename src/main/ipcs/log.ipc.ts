@@ -1,11 +1,11 @@
 import IPCEvent from './base.ipc';
 import { app } from 'electron';
-import { information } from '../constants';
+import { IPCEvents, information } from '../constants';
 import path from 'path';
 import Logger from '../logger';
 
 export default new IPCEvent(
-  'log',
+  IPCEvents.log,
   'sync',
   (
     window,

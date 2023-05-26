@@ -2,7 +2,7 @@ import React from 'react';
 import Variant from '../../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { HomeButton } from '../../components';
+import { Controllers, HomeButton } from '../../components';
 
 export default function CourseTemplate() {
   const { ref, inView } = useInView({
@@ -66,12 +66,8 @@ export default function CourseTemplate() {
           </p>
         </motion.div>
 
-          <div className='btns'>
-            <button  className='prevBtn'></button>
-            <button  className='nextBtn'></button>
-          </div>
+        <Controllers nextLink="" prevLink="" />
       </div>
-
     </section>
   );
 }

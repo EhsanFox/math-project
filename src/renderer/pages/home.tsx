@@ -3,6 +3,8 @@ import Variant from '../components/variant';
 import { Variants, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import { CButton } from 'renderer/components';
+import { IPCEvents } from 'main/constants';
 
 export default function homePage() {
   const { ref, inView } = useInView({
@@ -29,57 +31,57 @@ export default function homePage() {
       </div>
 
       <div className="btnBox">
-        <motion.button
+        <CButton
           className="btnOne"
-          ref={ref}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={
+          variant={
             Variant('fadeLeft', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <Link to="/courses" className="button_top"><span> لیست درس ها </span></Link>
-        </motion.button>
+          <Link to="/courses" className="button_top">
+            <span> لیست درس ها </span>
+          </Link>
+        </CButton>
 
-        <motion.button
+        <CButton
           className="btnTwo"
-          ref={ref}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={
+          variant={
             Variant('fadeRight', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <Link to="/exams" className="button_top"><span>امتحانات</span></Link>
-        </motion.button>
+          <Link to="/exams" className="button_top">
+            <span>امتحانات</span>
+          </Link>
+        </CButton>
 
-        <motion.button
+        {/*
+        <CButton
           className="btnThree"
-          ref={ref}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={
+          variant={
             Variant('fadeLeft', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <Link to="/course-template" className="button_top"><span>نمرات</span></Link>
-        </motion.button>
+          <Link to="/course-template" className="button_top">
+            <span>نمرات</span>
+          </Link>
+        </CButton>
+        */}
 
-        <motion.button
-          className="btnFour"
-          ref={ref}
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={
+        <CButton
+          className="btnThree"
+          variant={
             Variant('fadeRight', 'tween', 0.5, 0.1) as unknown as Variants
           }
         >
-          <Link to="/exam-template" className="button_top"><span>درباره نرم افزار</span></Link>
-        </motion.button>
+          <div
+            className="button_top"
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              window.ipc.sendMessage(IPCEvents.openAbout);
+            }}
+          >
+            <span>درباره نرم افزار</span>
+          </div>
+        </CButton>
       </div>
     </section>
   );

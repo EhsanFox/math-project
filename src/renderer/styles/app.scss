@@ -1,4 +1,10 @@
-@import url('https://v1.fontapi.ir/css/Koodak');
+@font-face {
+    font-family: "Koodak";
+    src: url("../fonts/e1df35b5a7e9ab2b3456e83da4bcb41cf17933e836235f4209f80b53fb11e7a9.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
 *{
     margin: 0;
 	padding: 0;
@@ -246,6 +252,7 @@ main{
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
+                cursor: pointer;
             }
 
             & .prevBtn{
@@ -256,6 +263,7 @@ main{
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
+                cursor: pointer;
             }
         }
 
@@ -304,7 +312,7 @@ main{
                 margin: 12px;
                 height: 250px;
                 width: 250px;
-                border-radius: 100%;
+                // border-radius: 100%;
                 background: #333;
                 justify-content: center;
                 align-items: center;
@@ -400,8 +408,29 @@ main{
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
+            text-decoration: none
         }
 
+    
+
+        .btnDisable {
+            & button{
+                background: transparent;
+                height: 60px;
+                width: 200px;
+                border: none;
+                border-radius: 15px;
+                font-size: 1.3em;
+                background-image: url('../img/cover.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            filter: grayscale(100%);
+            cursor: not-allowed;
+        }
     }
 
     & .exam{
@@ -509,8 +538,7 @@ main{
             .img{
                 height: 200px;
                 width: 200px;
-                border-radius: 100%;
-                background: red;
+                //border-radius: 100%;
             }
 
             & .objectBoxParent{
@@ -578,3 +606,7 @@ main{
     text-decoration: none;
 }
 
+.disableLink {
+    text-decoration: none;
+    color: inherit;
+}

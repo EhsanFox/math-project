@@ -133,9 +133,8 @@ export default class AppWindow {
     });
 
     this.mainWindow!.on('close', () => {
-      this.storage.set<IStoreData['windows']>('windows', {
+      this.storage.set<IStoreData['windows']>('window', {
         ...this.mainWindow!.getBounds(),
-        isMaximized: this.mainWindow!.isMaximized(),
       });
     });
 

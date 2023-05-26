@@ -28,6 +28,16 @@ const configuration: webpack.Configuration = {
           },
         },
       },
+      {
+        test: /\.(wav|mp3)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
+        },
+      },
     ],
   },
 

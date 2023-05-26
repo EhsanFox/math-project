@@ -1,9 +1,10 @@
 module.exports = {
   productName: 'math-app',
   appId: 'org.js.ehsan.math.app',
-  copyright: `Copyright © ${new Date().getUTCFullYear()} Ehsan Golmakani`,
+  copyright: `Copyright © ${new Date().getUTCFullYear()} Ehsan & Farnaz Golmakani`,
   files: [
     'assets/*',
+    'assets/**/*',
     'dist/**/*',
     'node_modules/**/*',
     '.erb/**/*',
@@ -14,10 +15,6 @@ module.exports = {
     output: 'build',
   },
   publish: [
-    {
-      provider: 'generic',
-      url: 'https://wintube-server.vercel.app/files',
-    },
     {
       provider: 'github',
       private: true,
