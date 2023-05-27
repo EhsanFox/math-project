@@ -5,6 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import { Link } from 'react-router-dom';
 import { MouseEventHandler } from 'react';
 
+import falseSound from '../../../../assets/audios/falseAnswer.wav';
+import trueSound from '../../../../assets/audios/trueAnswer.wav';
+
 export default function Popup({
   open,
   title,
@@ -18,6 +21,11 @@ export default function Popup({
   link: string;
   close?: (event: {}, reason: 'backdropClick' | 'escapeKeyDown') => void;
 }) {
+  const sound = link === 'none' ? falseSound : trueSound;
+  const audio = new Audio(sound);
+
+  if (open) audio.play();
+
   return (
     <Dialog
       className="my-dialog"
