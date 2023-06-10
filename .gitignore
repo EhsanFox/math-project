@@ -30,3 +30,4 @@ npm-debug.log.*
 
 release/app/.erb
 release/app/assets
+release/app/assets/**/*

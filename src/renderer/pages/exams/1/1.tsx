@@ -7,7 +7,7 @@ import { HomeButton, Popup } from '../../../components';
 import img from './1.png';
 import sound from '../../../../../assets/audios/startExam.wav';
 
-export default function First1Exam() {
+export default function FirstExam() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [value, setValue] = useState<string>('option1');
   const [open, setOpen] = useState(false);
@@ -48,22 +48,6 @@ export default function First1Exam() {
 
         <div className="leftContent">
           <img className="img" src={img} alt="img" />
-          {/*
-          <div className="objectBoxParent">
-            <motion.div
-              className="objectBox"
-              ref={ref}
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true }}
-              variants={
-                Variant('fadeDown', 'tween', 0.5, 0.1) as unknown as Variants
-              }
-            >
-              <p>نمره 0/0</p>
-            </motion.div>
-          </div>
-          */}
         </div>
 
         <div className="rightContent">
@@ -78,7 +62,7 @@ export default function First1Exam() {
                 Variant('fadeDown', 'tween', 0.5, 0.1) as unknown as Variants
               }
             >
-              <p>سوال</p>
+              <p>در عکس سمت چپ چند تا توپ میبینی گلم؟</p>
             </motion.div>
           </div>
 
@@ -186,7 +170,7 @@ export default function First1Exam() {
             open={open}
             title="آفرین 😘"
             body="درست گفتی عزیزم، بریم سوال بعدی"
-            link="/"
+            link="/exams/1/2"
           />
         ) : (
           <Popup

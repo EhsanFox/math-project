@@ -28,7 +28,6 @@ function App() {
           <Route path="/exams" element={<ExamList />} />
 
           {/* Courses Pages */}
-          <Route path="/courses/2/1" element={<HomePage />} />
           <Route
             path="/courses/1/1"
             element={<Courses.FirstCourse.First1Course />}
@@ -41,9 +40,22 @@ function App() {
             path="/courses/1/3"
             element={<Courses.FirstCourse.Third1Course />}
           />
+          <Route
+            path="/courses/2/1"
+            element={<Courses.SecondCourse.First2Course />}
+          />
+          <Route
+            path="/courses/2/2"
+            element={<Courses.SecondCourse.Second2Course />}
+          />
 
           {/* Exams Pages */}
           <Route path="/exams/1/1" element={<Exams.FirstExam.First1Exam />} />
+          <Route path="/exams/1/2" element={<Exams.FirstExam.Second1Exam />} />
+          <Route path="/exams/1/3" element={<Exams.FirstExam.Third1Exam />} />
+
+          <Route path="/exams/2/1" element={<Exams.SecondExam.First2Exam />} />
+          <Route path="/exams/2/2" element={<Exams.SecondExam.Second2Exam />} />
         </Routes>
       </main>
     </HashRouter>

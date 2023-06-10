@@ -23,7 +23,6 @@ export default function Third1Page() {
 
     window.ipc.callFor(IPCEvents.updateStorage, 'set', 'exams.1', 'start');
     window.ipc.callFor(IPCEvents.updateStorage, 'set', 'lessons.1', 'finish');
-    window.ipc.callFor(IPCEvents.updateStorage, 'set', 'lessons.2', 'start');
 
     return () => {
       myRef.current.pause();
